@@ -1,0 +1,14 @@
+<% provide(:title, "Text") %>
+<h1>Please input text</h1>
+<div>
+  <%= form_for :text, url: {action: :index}, html: {method: :get} do |f| %>
+    <%= f.text_field :text, value: @text %>
+    <%= f.submit "Search" %>
+  <% end %>
+</div>
+<h1>Results</h1>
+<div>
+  <% @results.each do |result| %>
+    <div><%= result %></div>
+  <% end %>
+</div>
